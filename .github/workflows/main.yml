@@ -44,7 +44,7 @@ jobs:
           body: "Main Project Flutter Applications [version]=> v2.6"
 
       - name: Create a Release APPs
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: Applications!
           path: |
