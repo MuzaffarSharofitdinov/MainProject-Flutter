@@ -1,5 +1,4 @@
 // import 'dart:io';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:My_App/led.dart';
 import 'package:My_App/door.dart';
@@ -8,6 +7,8 @@ import 'package:My_App/temp.dart';
 import 'package:My_App/auto.dart';
 import 'package:My_App/heat.dart';
 import 'package:My_App/camera.dart';
+// ######################################## Temperature from FireBase
+import 'package:My_App/temp2_firebase.dart';
 
 void main() {
   // WidgetsFlutterBinding.ensureInitialized();
@@ -96,6 +97,8 @@ class MyApp extends StatelessWidget {
         Camera.routeName: (context) => const Camera(),
         Temp.routeName: (context) => const Temp(),
         Auto.routeName: (context) => const Auto(),
+        // ######################################## Temperature from FireBase
+        Temp2_FireBase.routeName: (context) => const Temp2_FireBase(),
       },
     );
   }
@@ -172,6 +175,17 @@ class Home extends StatelessWidget {
       'title': 'Automation Control',
     });
   }
+  // ######################################## Temperature from FireBase
+  void temp2_firebase(BuildContext context) {
+  // Navigator.push(context, MaterialPageRoute(builder: (_) {
+  //   return const Temp();
+  // }));
+
+  Navigator.pushNamed(context, Temp2_FireBase.routeName, arguments: {
+  'title': 'Temperature from FireBase',
+  });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -555,6 +569,31 @@ class Home extends StatelessWidget {
                                 ],
                               ),
                             ),
+
+                            // #################### (Temperature from FireBase)
+                            const SizedBox(height: 10),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10, right: 10),
+                              child: Row(children: [
+                                Expanded(
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      temp2_firebase(context);
+                                    },
+                                    child: const Text(
+                                      'temperature',
+                                      style: TextStyle(
+                                        color: Colors.red,
+                                        fontSize: 26.5,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                              ),
+                            ),
+                            // ####################
 
                           ],),
                         ),

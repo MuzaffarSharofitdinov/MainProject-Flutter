@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:postgres/postgres.dart';
 
 class DataBase {
-  final String id = "33333333333";
+  final String id = "1";
   String s_temperature = "-1";
   String s_humidity = "-1";
   List data = [];
