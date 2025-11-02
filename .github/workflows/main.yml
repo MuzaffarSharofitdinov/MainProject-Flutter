@@ -39,9 +39,9 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "build/ios/iphoneos/app-release.ipa,build/app/outputs/flutter-apk/app-release.apk,build/app/outputs/bundle/release/app-release.aab"
-          tag: v2.5
+          tag: v2.6
           token: ${{ secrets.TOKEN }}
-          body: "Main Project Flutter Applications [version]=> v2.5"
+          body: "Main Project Flutter Applications [version]=> v2.6"
 
       - name: Create a Release APPs
         uses: actions/upload-artifact@v2
